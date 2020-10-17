@@ -85,7 +85,48 @@ python source/post_process.py
 ### 四、观点抽取
 观点抽取是用算法从指定文本中抽取处理文本的评价对象，例如：OPPO FIND X2是一部很好的旗舰级手机。那么观点抽取算法会得到：OPPO FIND X2。
 #### 1. 数据预处理
-观点抽取本质上就是命名实体识别NER任务，只不过不需要很复杂BIO去识别出实体的类型，如地点机构人物，只用简单的BIO就行了。所以要先对数据进行预处理成以BIO标注格式的数据。
+观点抽取本质上就是命名实体识别NER任务，只不过不需要很复杂BIO去识别出实体的类型，如地点机构人物，只用简单的BIO就行了。所以要先对数据进行预处理成以BIO标注格式的数据。但首先也要先将之前我们下载好的RoBERTa-wwm-ext-large模型文件夹内的文件放在``NER/prev_trained_model/bert-base/``下，而且还要把之前解压出的COTE-BD、COTE-DP和COTE-MFW数据文件夹放置在``NER/datasets/AE/``下面，然后再进行数据预处理：
 ```
+cd NER
 cd python data_preprocess_single_word.py
 ```
+最后``NER/datasets/AE/``下会出现以“_new2”为结尾的新数据集，都是预处理好的。
+
+#### 2. 模型训练、验证及预测
+此时，依次将不同数据集放入cner分别训练、验证及预测。因为COTE没有验证集，所以暂由train代替dev。因此在``run_ner_softmax.py``中第203行改为train。
+```
+# 将AE/datasets/COTE-BD_new2下的文件复制到AE/datasets/cner/下后，运行下列命令
+# 注意output_dir要随着数据集而更改
+python run_ner_softmax.py \
+  --model_type=bert \
+  --model_name_or_path=./prev_trained_model/bert-base \
+  --task_name="cner" \
+  --do_train \
+  --do_eval \
+  --do_predict \
+  --do_lower_case \
+  --loss_type=ce \
+  --data_dir=./datasets/cner/ \
+  --train_max_seq_length=128 \
+  --eval_max_seq_length=128 \
+  --per_gpu_train_batch_size=8 \
+  --per_gpu_eval_batch_size=8 \
+  --learning_rate=3e-5 \
+  --num_train_epochs=3.0 \
+  --logging_steps=448 \
+  --save_steps=448 \
+  --output_dir=./outputs/cner_cotebd_output/ \
+  --overwrite_output_dir \
+  --seed=42
+```
+训练且预测好后，``NER/outputs/``下会出现三个数据集的模型结果文件夹。
+#### 3. 结果后处理
+```
+cd NER
+python post_process.py
+```
+
+最后将后处理后的结果打包提交给[千言数据集：情感分析](https://aistudio.baidu.com/aistudio/competition/detail/50)，就能得到以下的成绩：
+|Score|NLPCC14-SC|ChnSentiCorp|COTE_BD|COTE_DP|SE-ABSA16_CAME|COTE_MFW|SE-ABSA16_PHNS|提交时间|
+|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+|Alvin0310的团队|0.8282|0.8384|0.9392|0.8729|0.893|0.7208|0.8901|0.6427|2020-10-17 21:14|
