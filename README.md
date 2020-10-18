@@ -9,7 +9,7 @@ COI，是Comment of Interest的缩写，如果熟悉美剧《疑犯追踪》(英
 3. 观点级情感分析（Aspect-level Sentiment Classification）
 4. 观点抽取（Opinion Target Extraction）
 
-详细项目解释请见：[练手项目：电商评论文本挖掘 - COI (Comment of interest)](https://mp.weixin.qq.com/s?__biz=MzUyNzA1OTcxNg==&mid=2247483885&idx=1&sn=ffd40a38193b9d846c5eca8ae8e8744d&chksm=fa041f86cd739690f3df40516b406835f8ff44ae51224edccec4f5238cd4d230de50d5e51985&token=370538825&lang=zh_CN#rd)
+详细项目解释请见：[练手项目：电商评论文本挖掘 - COI (Comment of interest)](https://mp.weixin.qq.com/s?__biz=MzUyNzA1OTcxNg==&mid=2247483885&idx=1&sn=ffd40a38193b9d846c5eca8ae8e8744d&chksm=fa041f86cd739690f3df40516b406835f8ff44ae51224edccec4f5238cd4d230de50d5e51985&token=370538825&lang=zh_CN#rd)<br>
 欢迎关注我微信公众号: zaicode
 
 ### 环境配置
