@@ -1,0 +1,115 @@
+python run_bert_2562_task2.py \
+--model_type bert \
+--model_name_or_path ../model/chinese_roberta_wwm_large_ext_pytorch  \
+--do_train \
+--do_eval \
+--do_test \
+--data_dir ../data/baidu_data/task2_data_StratifiedKFold_2020/data_origin_0 \
+--output_dir ../model/roberta_wwm_large_5121_42/task2_roberta_wwm_large_5121_42_0 \
+--max_seq_length 512 \
+--split_num 1 \
+--lstm_hidden_size 512 \
+--lstm_layers 1 \
+--lstm_dropout 0.1 \
+--eval_steps 200 \
+--per_gpu_train_batch_size 4 \
+--gradient_accumulation_steps 4 \
+--warmup_steps 0 \
+--per_gpu_eval_batch_size 32 \
+--learning_rate 1e-5 \
+--adam_epsilon 1e-6 \
+--weight_decay 0 \
+--train_steps 20000 \
+--freeze 0;
+python run_bert_2562_task2.py \
+--model_type bert \
+--model_name_or_path ../model/chinese_roberta_wwm_large_ext_pytorch  \
+--do_train \
+--do_eval \
+--do_test \
+--data_dir ../data/baidu_data/task2_data_StratifiedKFold_2020/data_origin_1 \
+--output_dir ../model/roberta_wwm_large_5121_42/task2_roberta_wwm_large_5121_42_1 \
+--max_seq_length 512 \
+--split_num 1 \
+--lstm_hidden_size 512 \
+--lstm_layers 1 \
+--lstm_dropout 0.1 \
+--eval_steps 200 \
+--per_gpu_train_batch_size 4 \
+--gradient_accumulation_steps 4 \
+--warmup_steps 0 \
+--per_gpu_eval_batch_size 32 \
+--learning_rate 1e-5 \
+--adam_epsilon 1e-6 \
+--weight_decay 0 \
+--train_steps 20000 \
+--freeze 0;
+python run_bert_2562_task2.py \
+--model_type bert \
+--model_name_or_path ../model/chinese_roberta_wwm_large_ext_pytorch  \
+--do_train \
+--do_eval \
+--do_test \
+--data_dir ../data/baidu_data/task2_data_StratifiedKFold_2020/data_origin_2 \
+--output_dir ../model/roberta_wwm_large_5121_42/task2_roberta_wwm_large_5121_42_2 \
+--max_seq_length 512 \
+--split_num 1 \
+--lstm_hidden_size 512 \
+--lstm_layers 1 \
+--lstm_dropout 0.1 \
+--eval_steps 200 \
+--per_gpu_train_batch_size 4 \
+--gradient_accumulation_steps 4 \
+--warmup_steps 0 \
+--per_gpu_eval_batch_size 32 \
+--learning_rate 1e-5 \
+--adam_epsilon 1e-6 \
+--weight_decay 0 \
+--train_steps 20000 \
+--freeze 0;
+python run_bert_2562_task2.py \
+--model_type bert \
+--model_name_or_path ../model/chinese_roberta_wwm_large_ext_pytorch  \
+--do_train \
+--do_eval \
+--do_test \
+--data_dir ../data/baidu_data/task2_data_StratifiedKFold_2020/data_origin_3 \
+--output_dir ../model/roberta_wwm_large_5121_42/task2_roberta_wwm_large_5121_42_3 \
+--max_seq_length 512 \
+--split_num 1 \
+--lstm_hidden_size 512 \
+--lstm_layers 1 \
+--lstm_dropout 0.1 \
+--eval_steps 200 \
+--per_gpu_train_batch_size 4 \
+--gradient_accumulation_steps 4 \
+--warmup_steps 0 \
+--per_gpu_eval_batch_size 32 \
+--learning_rate 1e-5 \
+--adam_epsilon 1e-6 \
+--weight_decay 0 \
+--train_steps 20000 \
+--freeze 0;
+python run_bert_2562_task2.py \
+--model_type bert \
+--model_name_or_path ../model/chinese_roberta_wwm_large_ext_pytorch  \
+--do_train \
+--do_eval \
+--do_test \
+--data_dir ../data/baidu_data/task2_data_StratifiedKFold_2020/data_origin_4 \
+--output_dir ../model/roberta_wwm_large_5121_42/task2_roberta_wwm_large_5121_42_4 \
+--max_seq_length 512 \
+--split_num 1 \
+--lstm_hidden_size 512 \
+--lstm_layers 1 \
+--lstm_dropout 0.1 \
+--eval_steps 200 \
+--per_gpu_train_batch_size 4 \
+--gradient_accumulation_steps 4 \
+--warmup_steps 0 \
+--per_gpu_eval_batch_size 32 \
+--learning_rate 1e-5 \
+--adam_epsilon 1e-6 \
+--weight_decay 0 \
+--train_steps 20000 \
+--freeze 0;
